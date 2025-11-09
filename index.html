@@ -1,8 +1,56 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <script src="index.js"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">Metric/Imperial Unit Converter</header>
+
+      <form
+        id="converter-form"
+        class="converter-form"
+        role="search"
+        aria-label="Unit converter"
+      >
+        <label for="input" class="sr-only">Enter a number to convert</label>
+        <input
+          type="number"
+          inputmode="decimal"
+          step="any"
+          class="user-input"
+          id="input"
+          placeholder="Enter a number"
+          aria-label="Number to convert"
+        />
+        <!-- <button class="convert-button" id="convert-btn" type="submit">
+          Convert
+        </button> -->
+      </form>
+    </div>
+    <div class="units-container">
+      <div class="unit-boxes">
+        <div class="unit-header">Length (Meter/Feet)</div>
+        <div class="units" id="unit-outputs1"></div>
+      </div>
+      <div class="unit-boxes">
+        <div class="unit-header">Volume (Liters/Gallons)</div>
+        <div class="units" id="unit-outputs2"></div>
+      </div>
+      <div class="unit-boxes">
+        <div class="unit-header">Mass (Kilograms/Pounds)</div>
+        <div class="units" id="unit-outputs3"></div>
+      </div>
+    </div>
+  </body>
 </html>
