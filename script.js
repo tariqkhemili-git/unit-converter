@@ -12,7 +12,7 @@ Small, dependency-free unit converter script.
 const unitOutputs1 = document.getElementById("unit-outputs1");
 const unitOutputs2 = document.getElementById("unit-outputs2");
 const unitOutputs3 = document.getElementById("unit-outputs3");
-const convertBtn = document.getElementById("convert-btn");
+
 const inputEl = document.getElementById("input");
 const form = document.getElementById("converter-form");
 const liveResultsEl = document.getElementById("live-results");
@@ -39,6 +39,16 @@ function showMessage(msg) {
   if (unitOutputs3) unitOutputs3.textContent = msg;
 }
 
+function animateResult(el) {
+  if (!el) return;
+  const valueDiv = el.querySelector(".unit-value");
+  if (valueDiv) {
+    valueDiv.classList.remove("result-animate");
+    void valueDiv.offsetWidth;
+    valueDiv.classList.add("result-animate");
+  }
+}
+
 function convertUnits() {
   if (!inputEl) return showMessage("Input element missing.");
 
@@ -50,27 +60,33 @@ function convertUnits() {
     return;
   }
 
-  if (unitOutputs1)
+  if (unitOutputs1) {
     unitOutputs1.innerHTML = `<div class="unit-value">${formatPair(
       value,
       "metres",
       RATES.metreToFeet,
       "feet"
     )}</div>`;
-  if (unitOutputs2)
+    animateResult(unitOutputs1);
+  }
+  if (unitOutputs2) {
     unitOutputs2.innerHTML = `<div class="unit-value">${formatPair(
       value,
       "litres",
       RATES.litreToGallon,
       "gallons"
     )}</div>`;
-  if (unitOutputs3)
+    animateResult(unitOutputs2);
+  }
+  if (unitOutputs3) {
     unitOutputs3.innerHTML = `<div class="unit-value">${formatPair(
       value,
       "kilograms",
       RATES.kiloToPound,
       "pounds"
     )}</div>`;
+    animateResult(unitOutputs3);
+  }
 
   // Announce a concise summary for screen readers
   if (liveResultsEl) {
@@ -99,8 +115,6 @@ if (inputEl) {
     debounceTimer = setTimeout(convertUnits, 300);
   });
 }
-
-if (convertBtn) convertBtn.addEventListener("click", convertUnits);
 
 // Export for tests (no-op in browser)
 try {

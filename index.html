@@ -16,8 +16,7 @@
   </head>
   <body>
     <div class="container">
-      <header class="header">Metric/Imperial Unit Converter</header>
-
+      <header class="header">Metric to Imperial Unit Converter</header>
       <form
         id="converter-form"
         class="converter-form"
@@ -33,10 +32,8 @@
           id="input"
           placeholder="Enter a number"
           aria-label="Number to convert"
+          autocomplete="off"
         />
-        <!-- <button class="convert-button" id="convert-btn" type="submit">
-          Convert
-        </button> -->
       </form>
     </div>
     <div class="units-container">
@@ -47,17 +44,16 @@
         aria-live="polite"
         aria-atomic="true"
       ></div>
-
       <div class="unit-boxes">
-        <div class="unit-header">Length (Meter/Feet)</div>
+        <div class="unit-header">Length</div>
         <div class="units" id="unit-outputs1"></div>
       </div>
       <div class="unit-boxes">
-        <div class="unit-header">Volume (Liters/Gallons)</div>
+        <div class="unit-header">Volume</div>
         <div class="units" id="unit-outputs2"></div>
       </div>
       <div class="unit-boxes">
-        <div class="unit-header">Mass (Kilograms/Pounds)</div>
+        <div class="unit-header">Mass</div>
         <div class="units" id="unit-outputs3"></div>
       </div>
     </div>
