@@ -1,24 +1,28 @@
-html {
-  height: 100vh;
-  overflow-y: auto;
+/* Ensure padding/margin do not cause overflow */
+html,
+body,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-
 body {
   margin: 0;
   background: linear-gradient(135deg, #181824 0%, #23243a 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #eaeaea;
   font-family: Inter, "Segoe UI", "Arial", "Helvetica Neue", Helvetica,
     sans-serif;
   min-height: 100vh;
-  height: 100vh;
+  padding-top: 2rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-y: auto;
 }
 
 .container {
   background: linear-gradient(90deg, #23243a 0%, #2d2d4a 100%);
-  margin: 2rem auto 0rem;
+  margin: 0 auto 0rem;
   max-width: 520px;
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
