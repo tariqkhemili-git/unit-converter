@@ -15,6 +15,7 @@ const unitOutputs3 = document.getElementById("unit-outputs3");
 const convertBtn = document.getElementById("convert-btn");
 const inputEl = document.getElementById("input");
 const form = document.getElementById("converter-form");
+const liveResultsEl = document.getElementById("live-results");
 
 // Conversion constants (reasonable precision for UI conversions)
 const RATES = Object.freeze({
@@ -70,6 +71,16 @@ function convertUnits() {
       RATES.kiloToPound,
       "pounds"
     )}</div>`;
+
+  // Announce a concise summary for screen readers
+  if (liveResultsEl) {
+    const summary = `${value} entered. ${toFixed3(
+      value * RATES.metreToFeet
+    )} feet; ${toFixed3(value * RATES.litreToGallon)} gallons; ${toFixed3(
+      value * RATES.kiloToPound
+    )} pounds.`;
+    liveResultsEl.textContent = summary;
+  }
 }
 
 // prevent form reload

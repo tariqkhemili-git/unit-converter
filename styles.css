@@ -54,22 +54,7 @@ body {
   outline: 2px solid rgba(255, 255, 255, 0.35);
 }
 
-.convert-button {
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #6943ff;
-  background-color: #fff;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(105, 67, 255, 0.12);
-  cursor: pointer;
-  transition: box-shadow 0.15s ease, transform 0.06s ease;
-}
-
-.convert-button:active {
-  transform: translateY(1px);
-}
+/* Convert button removed from UI; styles intentionally omitted */
 
 .units-container {
   margin: 0;
